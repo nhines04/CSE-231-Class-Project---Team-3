@@ -1,14 +1,36 @@
 import java.util.Iterator;
 
+/**
+*This class generates 3 singly linked lists, one for each size. Then it searches
+*the singly linked lists for the first 2 even integers between 500 and 5,000
+*and finds how much time those operations take.
+*@author team 3
+*@version version 1.0 160329
+*@since version 1.0
+*/
 public class Team3{
+	/**
+	*list20, list2k, and list20k are SinglyLinkedLists with 20, 2000, and 20000
+	*elements respectively.
+	*/
 	SinglyLinkedList<Integer> list20, list2k, list20k;
 	
+	/**
+	*Constructs a Team3 object and takes 3 int[] arrays and calls methods
+	*to generate the SinglyLinkedLists.
+	*@param array1 int[] array with 20 elements.
+	*@param array2 int[] array with 2000 elements.
+	*@param array3 int[] array with 20,000 elements.
+	*/
 	public Team3(Integer[] array1, Integer[] array2, Integer[] array3){
 		list20 = new SinglyLinkedList<Integer>(array1);
 		list2k = new SinglyLinkedList<Integer>(array2);
 		list20k = new SinglyLinkedList<Integer>(array3);
 	}
-	
+
+	/**
+	*This method prints the time it took to search each of the 3 SinglyLinkedLists.
+	*/
 	public void testLists(){
 		long time;
 		time = testList(list20);
@@ -19,16 +41,36 @@ public class Team3{
 		System.out.println("List of 20,000 integers took " + time + "ns to search.");
 	
 	}
+	/**
+	*This method is called to test the 20 element SinglyLinkedList.
+	*@return the value that testList returns after searching the 20 element list.
+	*/
 	public long testList20(){
 		return testList(list20);
 	}
+	
+	/**
+	*This method is called to test the 2000 element SinglyLinkedList.
+	*@return the value that testList returns after searching the 2000 element list.
+	*/
 	public long testList2k(){
 		return testList(list2k);
 	}
+	
+	/**
+	*This method is called to test the 20,000 element SinglyLinkedList.
+	*@return the value that testList returns after searching the 20,000 element list.
+	*/
 	public long testList20k(){
 		return testList(list20k);
 	}
 	
+	/**
+	*This method iterates through the sent SinglyLinkedList and finds the first
+	*2 ints within, and times the operation.
+	*@param list the SinglyLinkedList to search through.
+	*@return the time the operation takes to complete.
+	*/
 	private long testList(SinglyLinkedList<Integer> list){
 		long startTime;
 		long finishTime;
