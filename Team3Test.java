@@ -1,46 +1,45 @@
 package edu.oakland.test;
-import project.production.*;
+
+import edu.oakland.production.*;
+import edu.oakland.helper.*;
+import edu.oakland.helper02.*;
 import java.util.*;
+import junit.framework.*;
 
 /**
-*This class tests the Team3 class to see if it correctly determines the amount
-*of time required to search 200, 2k, 20k, length singly linked lists for the
-*first two even and odd integers between 500 and 5k
-*@author team 3
-*@version version 1.1 160330
-*@since version 1.1
+* This class is designed to test the Team3.java, Link.java, 
+* SinglyLinkedList.java, and LinkedListIterator.java classes for Team 3's
+* assignment on the CSE 231 class project
+*@author Team 3
+*@version "version 1.0 160329"
+*@since "version 1.0"
 */
 
-public class Team3Test{
-	/**
-	*This method is called to set up 3 arrays that hold integers that are
-	*generated at random between 20-20000. Then it returns the result from plugging
-	*the 3 arrays into Team3.
-	*/
-	public static Team3 setUp(){
-		int i;
-		//sets up arrays to their respective lengths for testing
-		Integer[] arrRand1 = new Integer[20];
-		Integer[] arrRand2 = new Integer[2000];
-		Integer[] arrRand3 = new Integer[20000];
-		//fills void arrays with random integers between 20 - 20000
-		for(i=0;i<20;i++){
-			arrRand1[i] = (int)(Math.random()*19980 + 20);
-		}
-		for(i=0;i<2000;i++){
-			arrRand2[i] = (int)(Math.random()*19980 + 20);
-		}
-		for(i=0;i<20000;i++){
-			arrRand3[i] = (int)(Math.random()*19980 + 20);
-		}
-		return new Team3(arrRand1, arrRand2, arrRand3);
-	}
-	/**
-	*The main method calls setUp and testLists
-	*/
-	public static void main(String[] args){
+public class Team3Test extends TestCase{
+	private Integer[] test; 
+	private Team3 team3Test;
+	
+	public void setUp(){
+		test = new Integer[20];
+		evens = new int[2];
 		
-		Team3 asdf = setUp();
-		asdf.testLists();
+		for(int i = 0; i < 20; i++){
+			test[i] = 500 + i;
+		}
+		
+		System.out.print("Contents of test array, for visual inspection: ");
+		for(int i = 0; i < 19; i++){
+			System.out.print(test[i] + ", ");
+		}
+		System.out.println(test[19]);
+		
+		team3Test = new Team3(test, test, test);
+		evens = team3Test.getFirstTwoEvens(team3Test.getList20()));
+	}
+	
+	public void testTeam3(){
+		assertEquals(500, evens[0]);
+		assertEquals(502, evens[1]);
+		assertEquals(15, evens[0]);
 	}
 }
