@@ -1,4 +1,7 @@
+package edu.oakland.production;
+
 import java.util.Iterator;
+import edu.oakland.helper.*;
 
 /**
 *This class generates 3 singly linked lists, one for each size. Then it searches
@@ -63,6 +66,56 @@ public class Team3{
 	*/
 	public long testList20k(){
 		return testList(list20k);
+	}
+	
+	/**
+	*Getter method for the 20-element list, used by junit test class
+	*@return list20, the 20-element list
+	*/
+	public SinglyLinkedList<Integer> getList20(){
+		return list20;
+	}
+	
+	/**
+	*This method is called to find the first even number between 500 and 5000
+	*in the SinglyLinkedList
+	*@param list SinglyLinkedList being searched
+	*@return the first even number between 500 and 5000 in the SinglyLinkedList
+	*/
+	public int getFirstEven(SinglyLinkedList<Integer> list){
+		Iterator<Integer> iterator = list.iterator();
+		int num = 0;
+		int found = 0;
+		
+		while(iterator.hasNext() && found == 0){
+			num = iterator.next();
+			if(num >= 500 && num <= 5000 && num % 2 == 0){
+				found = 1;
+			}
+		}
+		
+		return num;
+	}
+	
+	/**
+	*This method is called to find the first even number between 500 and 5000
+	*in the SinglyLinkedList
+	*@param list SinglyLinkedList being searched
+	*@return the first even number between 500 and 5000 in the SinglyLinkedList
+	*/
+	public int getSecondEven(SinglyLinkedList<Integer> list){
+		Iterator<Integer> iterator = list.iterator();
+		int num = 0;
+		int found = 0;
+		
+		while(iterator.hasNext() && found < 2){
+			num = iterator.next();
+			if(num >= 500 && num <= 5000 && num % 2 == 0){
+				found++;
+			}
+		}
+		
+		return num;
 	}
 	
 	/**
