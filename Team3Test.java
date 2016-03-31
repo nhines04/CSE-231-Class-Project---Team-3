@@ -21,6 +21,7 @@ public class Team3Test extends TestCase{
 	
 	public void setUp(){
 		test = new Integer[20];
+		evens = new int[2];
 		
 		for(int i = 0; i < 20; i++){
 			test[i] = 500 + i;
@@ -33,11 +34,12 @@ public class Team3Test extends TestCase{
 		System.out.println(test[19]);
 		
 		team3Test = new Team3(test, test, test);
+		evens = team3Test.getFirstTwoEvens(team3Test.getList20()));
 	}
 	
 	public void testTeam3(){
-		assertEquals(500, team3Test.getFirstEven(team3Test.getList20()));
-		assertEquals(502, team3Test.getSecondEven(team3Test.getList20()));
-		assertEquals(15, team3Test.getFirstEven(team3Test.getList20()));
+		assertEquals(500, evens[0]);
+		assertEquals(502, evens[1]);
+		assertEquals(15, evens[0]);
 	}
 }
