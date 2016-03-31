@@ -7,8 +7,8 @@ import java.util.*;
 *of time required to search 200, 2k, 20k, length singly linked lists for the
 *first two even and odd integers between 500 and 5k
 *@author team 3
-*@version version 1.1 160330
-*@since version 1.1
+*@version version 1.2 160330
+*@since version 1.2
 */
 
 public class Team3Tester{
@@ -25,13 +25,13 @@ public class Team3Tester{
 		Integer[] arrRand3 = new Integer[20000];
 		//fills void arrays with random integers between 20 - 20000
 		for(i=0;i<20;i++){
-			arrRand1[i] = (int)((Math.random()*19980) + 20);
+			arrRand1[i] = (int)((Math.random()*199800) + 20);
 		}
 		for(i=0;i<2000;i++){
-			arrRand2[i] = (int)((Math.random()*19980) + 20);
+			arrRand2[i] = (int)((Math.random()*199800) + 20);
 		}
 		for(i=0;i<20000;i++){
-			arrRand3[i] = (int)((Math.random()*19980) + 20);
+			arrRand3[i] = (int)((Math.random()*199800) + 20);
 		}
 		return new Team3(arrRand1, arrRand2, arrRand3);
 	}
