@@ -25,7 +25,7 @@ public class Team3{
 	*@param array2 int[] array with 2000 elements.
 	*@param array3 int[] array with 20,000 elements.
 	*/
-	public Team3(Integer[] array1, Integer[] array2, Integer[] array3){
+	public Team3(Integer[] array1, Integer[] array2, Integer[] array3) {
 		list20 = new SinglyLinkedList<Integer>(array1);
 		list2k = new SinglyLinkedList<Integer>(array2);
 		list20k = new SinglyLinkedList<Integer>(array3);
@@ -34,7 +34,7 @@ public class Team3{
 	/**
 	*This method prints the time it took to search each of the 3 SinglyLinkedLists.
 	*/
-	public void testLists(){
+	public void testLists() {
 		long time;
 		time = testList(list20);
 		System.out.println("List of 20 integers took " + time + "ns to search.");
@@ -46,35 +46,31 @@ public class Team3{
 	}
 	/**
 	*This method is called to test the 20 element SinglyLinkedList.
-	*@return the value that testList returns after searching the 20 element list.
+	*@return the elapsed time that testList returns after searching the 20 
+	*element list.
 	*/
-	public long testList20(){
+	public long getTimeOne() {
 		return testList(list20);
 	}
 	
 	/**
 	*This method is called to test the 2000 element SinglyLinkedList.
-	*@return the value that testList returns after searching the 2000 element list.
+	*@return the elapsed time that testList returns after searching the 2000 
+	*element list.
 	*/
-	public long testList2k(){
+	public long getTimeTwo() {
 		return testList(list2k);
 	}
 	
 	/**
 	*This method is called to test the 20,000 element SinglyLinkedList.
-	*@return the value that testList returns after searching the 20,000 element list.
+	*@return the elapsed time that testList returns after searching the 20,000 
+	*element list.
 	*/
-	public long testList20k(){
+	public long getTimeThree() {
 		return testList(list20k);
 	}
 	
-	/**
-	*Getter method for the 20-element list, used by junit test class
-	*@return list20, the 20-element list
-	*/
-	public SinglyLinkedList<Integer> getList20(){
-		return list20;
-	}
 	/**
 	*This method is called to find the first two even numbers between 500 and 5000
 	*in the SinglyLinkedList
@@ -95,6 +91,33 @@ public class Team3{
 			}
 		}		
 		return evens;
+	}
+	
+	/**
+	*This method returns the first two even integers between 500 and 5000 in the
+	*20-element list
+	*@return the first two even number between 500 and 5000 in the SinglyLinkedList
+	*/
+	public int[] getValuesOne() {
+		return getFirstTwoEvens(list20);
+	}
+	
+	/**
+	*This method returns the first two even integers between 500 and 5000 in the
+	*2000-element list
+	*@return the first two even number between 500 and 5000 in the SinglyLinkedList
+	*/
+	public int[] getValuesTwo() {
+		return getFirstTwoEvens(list2k);
+	}
+	
+	/**
+	*This method returns the first two even integers between 500 and 5000 in the
+	*20,000-element list
+	*@return the first two even number between 500 and 5000 in the SinglyLinkedList
+	*/
+	public int[] getValuesThree() {
+		return getFirstTwoEvens(list20k);
 	}
 	
 	/**

@@ -21,7 +21,6 @@ public class Team3Test extends TestCase{
 	
 	public void setUp(){
 		test = new Integer[20];
-		evens = new int[2];
 		
 		for(int i = 0; i < 20; i++){
 			test[i] = 500 + i;
@@ -38,8 +37,19 @@ public class Team3Test extends TestCase{
 	}
 	
 	public void testTeam3(){
+		/**
+		* The following two tests will confirm that the system correctly
+		* identified the first two even numbers between 500-5000 in the 
+		* 20-element SinglyLinkedList, which in this case will be 500 and 502
+		*/
 		assertEquals(500, evens[0]);
 		assertEquals(502, evens[1]);
-		assertEquals(15, evens[0]);
+		
+		/**
+		* The following test, if enabled, is designed to fail 
+		* given that the number 504 is the third even number in the test array,
+		* not the first
+		*/
+		//assertEquals(504, evens[0]);
 	}
 }

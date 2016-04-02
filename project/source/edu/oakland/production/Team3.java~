@@ -87,7 +87,7 @@ public class Team3{
 		int num = 0;
 		int found = 0;
 		
-		while(iterator.hasNext() && found > 2){
+		while(iterator.hasNext() && found < 2){
 			num = iterator.next();
 			if(num >= 500 && num <= 5000 && num % 2 == 0){
 				evens[found] = num;

@@ -33,7 +33,7 @@ public class Team3Test extends TestCase{
 		System.out.println(test[19]);
 		
 		team3Test = new Team3(test, test, test);
-		evens = team3Test.getFirstTwoEvens(team3Test.getList20());
+		evens = team3Test.getValuesOne();
 	}
 	
 	public void testTeam3(){
