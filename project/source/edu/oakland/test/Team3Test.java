@@ -32,8 +32,8 @@ public class Team3Test extends TestCase{
 		}
 		System.out.println(test[19]);
 		
-		team3Test = new Team3(test, test, test);
-		evens = team3Test.getValuesOne();
+		team3Test = new Team3(test);
+		evens = team3Test.getValues();
 	}
 	
 	public void testTeam3(){
